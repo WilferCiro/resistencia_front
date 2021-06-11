@@ -40,7 +40,12 @@ class ModalYoutube extends BasePanel{
 						<div><button className="btn-icon btn-icon-min" onClick={(e) => this.close()}><RiCloseFill /></button></div>
 					</div>
 					<div className="modal-body">
-						<iframe width="100%" height="450px" src="https://www.youtube.com/embed/7sN8jSDnniY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+					{
+						this.state.url ?
+						<iframe width="100%" height="450px" src={this.state.url} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+						:
+						null
+					}
 					</div>
 				</div>
 			</div>

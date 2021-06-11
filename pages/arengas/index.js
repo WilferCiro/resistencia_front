@@ -24,7 +24,7 @@ class ArengasPage extends BasePanel{
 								key={Math.random()}
 								title={item.titulo}
 								body={item.cuerpo}
-								youtube="https://www.youtube.com/watch?v=wtDV8Atc6dY"
+								youtube={item.youtube ? item.youtube.replace("https://www.youtube.com/watch?v=", "https://www.youtube.com/embed/") : null}
 							/>
 						})
 					}
