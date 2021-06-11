@@ -1,0 +1,506 @@
+@import "variables";
+@import "pages/empresa_profile.scss";
+
+$panel_size : 25%;
+
+body, html{
+	margin: 0px;
+	padding: 0px;
+	background: $color-background;
+	font-family: $font-stack;
+	font-size: 13px;
+	scroll-behavior: smooth;
+	color: $color-text;
+}
+
+h1 {
+	font-size: $font-h1 !important;
+	font-weight: bold;
+	font-family: $font-stack;
+	color: $color-highligth;
+}
+
+h2 {
+	font-size: $font-h2 !important;
+	font-family: $font-stack;
+	color: $color-highligth;
+}
+
+h3 {
+	font-size: $font-h3 !important;
+	font-family: $font-stack;
+	color: $color-highligth;
+}
+
+h4 {
+	font-size: $font-h4 !important;
+	font-family: $font-stack;
+	color: $color-highligth;
+}
+
+h5 {
+	font-size: $font-h5 !important;
+	font-family: $font-stack;
+	color: $color-highligth;
+}
+
+p {
+	font-size: $font-p !important;
+	font-family: $font-stack;
+}
+
+.image-pagina{
+	border-radius: 15px;
+	box-shadow: 2px 2px 3px $color-boder;
+	overflow: hidden;
+	margin-top: 15px;
+}
+
+// generic
+section{
+	background: white;
+	box-shadow: 2px 2px 3px $color-boder;
+	padding: 20px 15px;
+	border-radius: 15px;
+	margin-bottom: 10px;
+	h4{
+		margin: 0px;
+		color: $color-highligth;
+		border-bottom: 2px solid $color-highligth;
+		width: fit-content;
+		padding: 5px;
+	}
+}
+.section-body-right, .section-body-left{
+	margin-top: 15px;
+	img{
+		border-radius: 100%;
+		width: 100px;
+		height: 100px;
+		border:solid 1px black;
+		display: block;
+		margin: auto;
+	}
+}
+.section-body-left{
+	display: grid;
+	grid-template-columns: 20% 80%;
+}
+.section-body-right{
+	display: grid;
+	grid-template-columns: 80% 20%;
+}
+hr{
+	border: solid 1px $color-boder;
+}
+// generic
+
+// _app.js
+.complete-page{
+	display: grid;
+	grid-template-columns: 100%;
+}
+.body-page{
+
+}
+.body{
+	min-height: 500px;
+	width: 80%;
+	margin: auto;
+}
+// _app.js
+
+// header.js
+header{
+	width: 100%;
+	padding: 20px 0px;
+	display: grid;
+	grid-template-columns: 30% 70%;
+}
+.header-buttons{
+	width: fit-content;
+	margin: auto;
+	display: flex;
+	a{
+		margin-right: 20px;
+		margin-left: 20px;
+		cursor: pointer;
+		display: block;
+		padding: 5px 10px;
+		&:hover{
+			color: $color-highligth;
+		}
+	}
+	a.selected{
+		border-bottom: solid 5px $color-highligth;
+		color: $color-highligth;
+	}
+}
+.header-logo{
+	.img-logo{
+		width: 50px;
+		height: 50px;
+		border-radius: 100%;
+		overflow: hidden;
+		margin: auto;
+	}
+}
+// header.js
+
+// footer.js
+footer{
+	text-align: center;
+	padding: 30px 0px;
+	a{
+		color: $color-highligth;
+	}
+}
+// footer.js
+
+// SidePanel.js
+.side-panel{
+	padding: 10px 0px;
+	background: white;
+	position: absolute;
+	height: calc(100% - 20px);
+	width: $panel_size;
+	overflow: auto;
+}
+.side-panel-header{
+	padding: 20px 10px;
+}
+.event{
+	background: white;
+	padding: 5px 10px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px $color-boder;
+	cursor: pointer;
+	transition: all 0.5s;
+	h4{
+		margin: 0px;
+	}
+	&:hover{
+		box-shadow: 2px 2px 2px $color-boder;
+		background: $color-background;
+	}
+}
+
+// SidePanel.js
+
+// arengas.js
+.arengas-list{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	section{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+.btn-icon{
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	border-radius: 100%;
+	border: none;
+	background: $color-highligth;
+	color: white;
+	cursor: pointer;
+	font-size: 25px;
+	line-height: 40px;
+	&:hover{
+		opacity: 0.8;
+	}
+}
+.btn-icon-min{
+	width: 30px;
+	height: 30px;
+	font-size: 20px;
+	line-height: 30px;
+}
+.btn-red{
+	background: #F14534;
+}
+// arengas.js
+
+// flayer.js
+.flayer-container{
+	width: 50%;
+	margin: auto;
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px $color-boder;
+	overflow: hidden;
+}
+// flayer.js
+
+//ModalYoutube.js
+// KiwiModal.js
+
+.modal-background{
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(2px);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 1000;
+	display: none;
+}
+.modal{
+	z-index: 1001;
+	background: white;
+	position: fixed;
+	border-radius: 4px;
+	display: none;
+	transition: all 2s;
+	top: 5%;
+}
+.open{
+	display: block;
+}
+.modal-1{
+	left: 38%;
+	top: 5%;
+	width: 24%;
+}
+.modal-2{
+	left: 30%;
+	top: 5%;
+	width: 40%;
+}
+.modal-3{
+	left: 15%;
+	top: 5%;
+	width: 70%;
+}
+.modal-4{
+	left: 5%;
+	top: 5%;
+	width: 90%;
+}
+.modal-header{
+	display: grid;
+	grid-template-columns: calc(100% - 30px) 30px;
+	border-bottom: 2px solid $color-boder;
+	width: calc(95% - 20px);
+	margin: auto;
+	margin-bottom: 20px;
+	font-size: $font-h3;
+	padding: 15px 10px;
+}
+.modal-body{
+	overflow: auto;
+	width: calc(95% - 20px);
+	padding: 15px 15px;
+	height: fit-content;
+	min-height: 300px;
+}
+.modal-footer{
+
+}
+// ModalYoutube.js
+
+/** NPROGRESS **/
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: $color-highligth;
+
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px $color-highligth, 0 0 5px $color-highligth;
+  opacity: 1;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 5px;
+  right: 50%;
+  background: white;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  padding: 10px 10px;
+  box-shadow: 0px 0px 3px gray;
+}
+
+#nprogress .spinner-icon {
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+
+  border: solid 3px transparent;
+  border-top-color: $color-highligth;
+  border-left-color: $color-highligth;
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/** NPROGRESS **/
+
+
+// calendar.css
+
+.react-calendar {
+	width: 100%;
+	max-width: 100%;
+	background: white;
+	line-height: 1.125em;
+}
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.react-calendar button {
+	margin: 0;
+	border: 0;
+	outline: none;
+	border-radius: 100%;
+	width: 40px;
+	height: 40px;
+}
+.react-calendar button:enabled:hover {
+	cursor: pointer;
+}
+.react-calendar__navigation {
+	height: 44px;
+	margin-bottom: 1em;
+}
+.react-calendar__navigation button {
+	min-width: 44px;
+	background: none;
+}
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+	background-color: #e6e6e6;
+}
+.react-calendar__navigation button[disabled] {
+	background-color: #f0f0f0;
+}
+.react-calendar__month-view__weekdays {
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 0.75em;
+}
+.react-calendar__month-view__weekdays__weekday {
+	padding: 0.5em;
+}
+.react-calendar__month-view__weekNumbers {
+	font-weight: bold;
+}
+.react-calendar__month-view__weekNumbers .react-calendar__tile {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.75em;
+	padding: calc(0.75em / 0.75) calc(0.5em / 0.75);
+}
+.react-calendar__month-view__days__day--weekend {
+	color: #d10000;
+}
+.react-calendar__month-view__days__day--neighboringMonth {
+	color: #757575;
+}
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+	padding: 2em 0.5em;
+}
+.react-calendar__tile {
+	max-width: 100%;
+	text-align: center;
+	padding: 0.75em 0.5em;
+	background: none;
+}
+.react-calendar__tile:disabled {
+	background-color: #f0f0f0;
+}
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+	background-color: $color-primary;
+}
+.react-calendar__tile--now {
+	background: $color-highligth;
+	color: white;
+}
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+	background: #ffffa9;
+}
+.react-calendar__tile--hasActive {
+	background: #76baff;
+}
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+	background: #a9d4ff;
+}
+.react-calendar__tile--active {
+	background: #006edc;
+	color: white;
+}
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+	background: #1087ff;
+}
+.react-calendar--selectRange .react-calendar__tile--hover {
+	background-color: #e6e6e6;
+}
+
+// calendar.css
