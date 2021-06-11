@@ -9,8 +9,6 @@ dist/
 build/
 out/
 
-components/ConstantServer.js
-
 .node_modules/
 .dist/
 .build/
