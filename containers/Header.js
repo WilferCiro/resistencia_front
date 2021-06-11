@@ -47,12 +47,17 @@ class Header extends BasePanel{
 							/>
 					</div>
 				</div>
-				<div className="header-buttons">
-					{
-						(routes).map((item, index) => {
-							return <a key={Math.random()} className={(this.state.selected === item["id"]) ? "selected" : ""} onClick={(e) => this.goTo(item["route"], item["route_alias"], item["id"])}>{item["label"]}</a>
-						})
-					}
+				<div>
+					<button className="btn-icon btn-icon-min header-buttons-toggle">M</button>
+					<div className="menu-header">
+						<div className="header-buttons">
+							{
+								(routes).map((item, index) => {
+									return <a key={Math.random()} className={(this.state.selected === item["id"]) ? "selected" : ""} onClick={(e) => this.goTo(item["route"], item["route_alias"], item["id"])}>{item["label"]}</a>
+								})
+							}
+						</div>
+					</div>
 				</div>
 			</header>
 
