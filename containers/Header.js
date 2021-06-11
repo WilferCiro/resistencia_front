@@ -67,7 +67,7 @@ class Header extends BasePanel{
 									return <a key={Math.random()} className={(this.state.selected === item["id"]) ? "selected" : ""} onClick={(e) => this.goTo(item["route"], item["route_alias"], item["id"])}>{item["label"]}</a>
 								})
 							}
-							<a key={Math.random()}>Quimbaya, Quindío</a>
+							<a key={Math.random()} title="Click para modificar">Quimbaya, Quindío</a>
 						</div>
 					</div>
 				</div>
