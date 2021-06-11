@@ -5,6 +5,8 @@ import Image          from 'next/image'
 import ImageLocal     from '@/components//ImageLocal';
 import { useRouter } from "next/router";
 import {RiMenuFill}   from 'react-icons/ri';
+import FormSelect     from '@/formcomponents//FormSelect';
+import Cookie   from 'js-cookie';
 
 class Header extends BasePanel{
 	constructor(props) {
@@ -17,8 +19,13 @@ class Header extends BasePanel{
 		this.setSelected = this.setSelected.bind(this);
 		this.goTo = this.goTo.bind(this);
 		this.toggleMenu = this.toggleMenu.bind(this);
+		this.changeCity  = this.changeCity.bind(this);
+
+		this.refSelectCiudad = React.createRef();
 	}
 	componentDidMount() {
+		let ciudad = Cookie.get("ciudad") ? Cookie.get("ciudad").toString() : "1";
+		this.refSelectCiudad.current.setValue(ciudad);
 	}
 
 	setSelected(item){
@@ -36,6 +43,12 @@ class Header extends BasePanel{
 		this.setState({
 			menuOpen: !this.state.menuOpen
 		});
+	}
+
+	changeCity(value) {
+		Cookie.set("ciudad", value.toString());
+
+		this.goTo(this.constants.route_index, this.constants.route_index_alias, "/");
 	}
 
 	render() {
@@ -67,7 +80,11 @@ class Header extends BasePanel{
 									return <a key={Math.random()} className={(this.state.selected === item["id"]) ? "selected" : ""} onClick={(e) => this.goTo(item["route"], item["route_alias"], item["id"])}>{item["label"]}</a>
 								})
 							}
-							<a key={Math.random()} title="Click para modificar">Quimbaya, Quindío</a>
+							<FormSelect
+								ref={this.refSelectCiudad}
+								options={this.props.ciudades}
+								onChange={this.changeCity}
+								/>
 						</div>
 					</div>
 				</div>

@@ -13,6 +13,7 @@ export default class BasePanel extends Component {
 	static service = Services;
 	static alertLocal = new React.createRef();
 	static modalYoutube = new React.createRef();
+	static ciudad = Cookie.get("ciudad") ? Cookie.get("ciudad").toString() : "1";
 
 	constructor(props) {
 		super(props);

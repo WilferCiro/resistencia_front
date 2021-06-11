@@ -32,22 +32,27 @@ class Documentacion extends App
 			pageProps = await Component.getInitialProps(ctx);
 		}
 
-		let tipoEmpresas = [];
-		/*let [_tipoEmpresas] = await Promise.all([
+		let ciudades = [];
+		let [_ciudades] = await Promise.all([
 			BasePanel.send(
 			{
-				endpoint: Constant.getPublicEndpoint() + "tipoempresa",
+				endpoint: Constant.getPublicEndpoint() + "ciudad",
 				method: 'GET',
 				body: {
-					"modelo" : "nombres",
-					"tipo_servicio" : "tipo_empresa"
+					"modelo" : "todo",
+					"ordenar_por" : "nombre"
 				}
 			}),
 		]);
-		if(_tipoEmpresas["estado_p"] === 200) {
-			tipoEmpresas = _tipoEmpresas["data"];
-		}*/
-		return {pageProps, tipoEmpresas};
+		if(_ciudades["estado_p"] === 200) {
+			for(let index in _ciudades["data"]) {
+				ciudades.push({
+					"label" : _ciudades["data"][index]["nombre"] + "," + _ciudades["data"][index]["departamento__nombre"],
+					"value" : _ciudades["data"][index]["pk"],
+				})
+			}
+		}
+		return {pageProps, ciudades};
 	}
 
 	componentDidMount() {
@@ -84,10 +89,10 @@ class Documentacion extends App
 	}
 
 	render(){
-		let {Component, pageProps} = this.props;
+		let {Component, pageProps, ciudades} = this.props;
 		let urlPage = "resistencia.";
 		let nombrePage = "Resistencia";
-		let defaultDescription = nombrePage + " se caracteriza por ayudar a los comerciantes y personas locales a encontrar mejor sus productos y ahorrar tiempo.";
+		let defaultDescription = nombrePage + " se caracteriza por organizar la información del Paro nacional.";
 		let imageBlog = urlPage + "/images/index/pic01.jpg";
 		let lemaPage = "información del paro";
 
@@ -275,7 +280,9 @@ class Documentacion extends App
 
 				<div className="complete-page">
 					<div className="body-page">
-						<Header currentRoute={this.props.router.asPath} />
+						<Header
+							currentRoute={this.props.router.asPath}
+							ciudades={ciudades} />
 						<div className="body">
 							<Component {...pageProps}/>
 						</div>
