@@ -27,7 +27,7 @@ class FormSelect extends BaseFormComponent{
 			<div className="form-input-container">
 				<select
 					ref={this.input}
-					className="form-text"
+					className="select-css"
 					placeholder={this.props.placeholder}
 					type="text"
 					onChange={this.onChange}

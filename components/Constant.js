@@ -48,6 +48,8 @@ class Constant{
 		this.img_logo                    = "/images/general/logo.png";
 		this.img_quienes_somos           = "/images/index/quienes_somos.jpg";
 		this.img_objetivos               = "/images/index/objetivos.jpg";
+		this.img_play_store              = "/images/footer/play_store.png";
+		this.img_apk_download            = "/images/footer/apk_download.png";
 
 
 	}
