@@ -84,11 +84,13 @@ section{
 }
 .section-body-left{
 	display: grid;
-	grid-template-columns: 20% 80%;
+	grid-template-columns: 18% 80%;
+	grid-column-gap: 2%;
 }
 .section-body-right{
 	display: grid;
-	grid-template-columns: 80% 20%;
+	grid-template-columns: 80% 18%;
+	grid-column-gap: 2%;
 }
 hr{
 	border: solid 1px $color-boder;
@@ -191,6 +193,14 @@ footer{
 // SidePanel.js
 
 // arengas.js
+.section-div-2{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	section{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
 .arengas-list{
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -209,7 +219,7 @@ footer{
 	color: white;
 	cursor: pointer;
 	font-size: 25px;
-	line-height: 40px;
+	line-height: 45px;
 	&:hover{
 		opacity: 0.8;
 	}
@@ -218,7 +228,7 @@ footer{
 	width: 30px;
 	height: 30px;
 	font-size: 20px;
-	line-height: 30px;
+	line-height: 35px;
 }
 .btn-red{
 	background: #F14534;

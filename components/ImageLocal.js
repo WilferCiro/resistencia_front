@@ -14,6 +14,8 @@ class ImageLocal extends BasePanel{
 		this.showURL = this.props.showURL !== undefined && this.props.showURL !== null ? this.props.showURL : true;
 
 		this.divClass = this.props.divClass;
+
+		this.layout = this.props.layout ? this.props.layout : "responsive";
 	}
 
 	setImage(image) {
@@ -33,7 +35,7 @@ class ImageLocal extends BasePanel{
 									alt={this.state.image["descripcion"]}
 									width={this.props.width}
 									height={this.props.height}
-									layout={"responsive"}
+									layout={this.layout}
 									priority={this.props.priority !== null && this.props.priority !== undefined ? true : false}
 									/>
 							</a>
@@ -45,7 +47,7 @@ class ImageLocal extends BasePanel{
 							alt={this.state.image["descripcion"]}
 							width={this.props.width}
 							height={this.props.height}
-							layout={"responsive"}
+							layout={this.layout}
 							priority={this.props.priority !== null && this.props.priority !== undefined ? true : false}
 							/>
 					</div>

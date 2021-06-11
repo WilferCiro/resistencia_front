@@ -45,7 +45,9 @@ class Constant{
 		this.route_page_alias            = '/paginas/{0}';
 
 		/*** IMÁGENES ***/
-		this.img_logo                       = "/images/general/logo.png";
+		this.img_logo                    = "/images/general/logo.png";
+		this.img_quienes_somos           = "/images/index/quienes_somos.jpg";
+		this.img_objetivos               = "/images/index/objetivos.jpg";
 
 
 	}
