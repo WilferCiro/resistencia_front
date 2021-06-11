@@ -275,7 +275,7 @@ class Documentacion extends App
 
 				<div className="complete-page">
 					<div className="body-page">
-						<Header />
+						<Header currentRoute={this.props.router.asPath} />
 						<div className="body">
 							<Component {...pageProps}/>
 						</div>

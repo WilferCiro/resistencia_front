@@ -21,8 +21,8 @@ class PaginasPage extends BasePanel{
 					<div>
 						<h2>{pagina.titulo}</h2>
 						<div dangerouslySetInnerHTML={{
-							__html: pagina.descripcion.replaceAll("\n", "<br />")
-						}} />
+						__html: pagina.descripcion.replace(/\n/g, "<br />")
+						}}></div>
 						<div className="image-pagina">
 							<ImageLocal
 								image={{"imagen" : pagina.portada, "descripcion" : "Logo"}}

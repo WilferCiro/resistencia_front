@@ -21,7 +21,7 @@ class Arenga extends BasePanel{
 				<h4>{this.props.title}</h4>
 				<div className="section-body-right">
 					<div dangerouslySetInnerHTML={{
-					__html: this.props.body.replaceAll("\n", "<br />")
+					__html: this.props.body.replace(/\n/g, "<br />")
 					}}></div>
 					<div>
 						{

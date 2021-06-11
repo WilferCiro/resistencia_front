@@ -10,7 +10,7 @@ class Header extends BasePanel{
 	constructor(props) {
 		super(props);
 		this.state = {
-			selected : "inicio",
+			selected : this.props.currentRoute,
 			menuOpen : false
 		}
 
@@ -40,11 +40,11 @@ class Header extends BasePanel{
 
 	render() {
 		let routes = [
-			{"route" : this.constants.route_index, "route_alias" : this.constants.route_index_alias, "label" : "Inicio", "id" : "inicio"},
-			{"route" : this.constants.route_actividades, "route_alias" : this.constants.route_actividades_alias, "label" : "Actividades", "id" : "actividades"},
-			{"route" : this.constants.route_arengas, "route_alias" : this.constants.route_arengas_alias, "label" : "Arengas", "id" : "arengas"},
-			{"route" : this.constants.route_flayers, "route_alias" : this.constants.route_flayers_alias, "label" : "Flayers", "id" : "flayers"},
-			{"route" : this.constants.route_paginas, "route_alias" : this.constants.route_paginas_alias, "label" : "Páginas de interés", "id" : "paginas"},
+			{"route" : this.constants.route_index, "route_alias" : this.constants.route_index_alias, "label" : "Inicio", "id" : "/"},
+			{"route" : this.constants.route_actividades, "route_alias" : this.constants.route_actividades_alias, "label" : "Actividades", "id" : "/actividades/"},
+			{"route" : this.constants.route_arengas, "route_alias" : this.constants.route_arengas_alias, "label" : "Arengas", "id" : "/arengas/"},
+			{"route" : this.constants.route_flayers, "route_alias" : this.constants.route_flayers_alias, "label" : "Flayers", "id" : "/flayers/"},
+			{"route" : this.constants.route_paginas, "route_alias" : this.constants.route_paginas_alias, "label" : "Páginas de interés", "id" : "/paginas/"},
 		]
 		return (
 			<header>
