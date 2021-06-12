@@ -60,4 +60,23 @@
 		display: block;
 	}
 
+	.footer-divider{
+		display: block;
+		text-align: center;
+	}
+	.iconos-footer{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		margin-top: 20px;
+	}
+
+	.select-header{
+		width: 80%;
+		margin: auto;
+		margin-top: 100px;
+		select{
+			width: 100%;
+		}
+	}
+
 }

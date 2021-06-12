@@ -80,11 +80,13 @@ class Header extends BasePanel{
 									return <a key={Math.random()} className={(this.state.selected === item["id"]) ? "selected" : ""} onClick={(e) => this.goTo(item["route"], item["route_alias"], item["id"])}>{item["label"]}</a>
 								})
 							}
-							<FormSelect
-								ref={this.refSelectCiudad}
-								options={this.props.ciudades}
-								onChange={this.changeCity}
-								/>
+							<div className="select-header">
+								<FormSelect
+									ref={this.refSelectCiudad}
+									options={this.props.ciudades}
+									onChange={this.changeCity}
+									/>
+							</div>
 						</div>
 					</div>
 				</div>
